@@ -29,6 +29,11 @@
                 "file": "fonts/UbuntuMono-Regular.ttf",
                 "name": "MONO_FONT_14",
                 "type": "font"
+            },
+            {
+                "file": "images/splashlogo.png",
+                "name": "IMAGES_SPLASHLOGO_PNG",
+                "type": "png"
             }
         ]
     },
