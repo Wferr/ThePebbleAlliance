@@ -1,6 +1,7 @@
 // Requires
 var UI = require('ui');
 var ajax = require('ajax');
+var Vector2 = require('vector2');
 //var Settings = require('settings');
 var teamNumber = ('2102');
 
@@ -10,13 +11,16 @@ var teamNumber = ('2102');
 //  Settings.option(teamNumber, "2102");
 //});
 // Static Cards
-var splashWindow = new UI.Window({
-  title:'Fetching Data',
-  subtitle:'Please Wait'
+var splashWindow = new UI.Window({ fullscreen: true});
+var splashLogo = new UI.Image ({
+  posisiton: new Vector2 (0,0),
+  size: new Vector2 (144,168),
+  image: "images/splash.png"
 });
 
 
 // Display Splash Card
+splashWindow.add(splashLogo);
 splashWindow.show();
 
 var apiId ="?X-TBA-App-Id=team2102:pebble-app:v01";

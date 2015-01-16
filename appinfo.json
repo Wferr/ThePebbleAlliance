@@ -31,8 +31,8 @@
                 "type": "font"
             },
             {
-                "file": "images/splashlogo.png",
-                "name": "IMAGES_SPLASHLOGO_PNG",
+                "file": "images/splash.png",
+                "name": "IMAGES_SPLASH_PNG",
                 "type": "png"
             }
         ]
