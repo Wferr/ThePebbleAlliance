@@ -4,6 +4,8 @@ var ajax = require('ajax');
 var Vector2 = require('vector2');
 var Accel = require('ui/accel');
 var Settings = require('settings');
+var Vibe = require('ui/vibe');
+
 var teamNumber =null;
 //Setting Team Number
 Settings.config(
@@ -17,7 +19,7 @@ var splashWindow = new UI.Window({ fullscreen: true});
 var splashLogo = new UI.Image ({
   posisiton: new Vector2 (0,0),
   size: new Vector2 (144,168),
-  image: "images/splash.png"
+  image: "images/logosplash.png"
 });
 
 // Display Splash Card
@@ -57,6 +59,7 @@ ajax(
 });
     teamInfoMenu.show();
     splashWindow.hide();
+    Vibe.vibration('long');
     },
   function(error) {
     console.log("Error");
