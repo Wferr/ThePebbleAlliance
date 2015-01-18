@@ -6,6 +6,19 @@ var Accel = require('ui/accel');
 var Settings = require('settings');
 var Vibe = require('ui/vibe');
 
+//Run Splash FIRST THING
+//Create Splash Window
+var splashWindow = new UI.Window();
+var splashLogo = new UI.Image ({
+  posisiton: new Vector2 (0,0),
+  size: new Vector2 (144,168),
+  image: "images/logosplash.png"
+});
+splashWindow.add(splashLogo);
+splashWindow.show();
+
+
+
 var teamNumber = '2102';
 var apiId ="?X-TBA-App-Id=team2102:pebble-app:v01";
 var API ='http://www.thebluealliance.com/api/v2/team/frc'+ teamNumber + apiId;
@@ -19,19 +32,6 @@ Settings.option({
 });
 
 // Static Cards
-
-//Splash
-//Create Splash Window
-var splashWindow = new UI.Window({ fullscreen: true});
-
-//Create Splash Logo
-var splashLogo = new UI.Image ({
-  posisiton: new Vector2 (0,0),
-  size: new Vector2 (144,168),
-  image: "images/logosplash.png"
-});
-//Add Splash Logo to Splash Window
-splashWindow.add(splashLogo);
 
 //Updated Window Card
 var updatedWindow = new UI.Card({
@@ -78,7 +78,7 @@ ajax(
 
 
 // Display Splash Card
-splashWindow.show();
+
 updateTeamInfo();
 
 var updateData = function(){
