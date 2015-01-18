@@ -14,16 +14,30 @@ Settings.config(
 Settings.option({
   teamNumber: '2102',
 });
+
+
+
+
+
 // Static Cards
+
 var splashWindow = new UI.Window({ fullscreen: true});
 var splashLogo = new UI.Image ({
   posisiton: new Vector2 (0,0),
   size: new Vector2 (144,168),
   image: "images/logosplash.png"
 });
+splashWindow.add(splashLogo);
+
+var updatedWindow = new UI.Card({
+  title: 'Data Updated',
+  subtitle: 'You are upto Date'
+});
+
+
+
 
 // Display Splash Card
-splashWindow.add(splashLogo);
 splashWindow.show();
 
 Accel.init();
@@ -60,6 +74,7 @@ ajax(
     teamInfoMenu.show();
     splashWindow.hide();
     Vibe.vibrate('double');
+    updatedWindow.show();
     },
   function(error) {
     console.log("Error");
