@@ -2,14 +2,16 @@
 var UI = require('ui');
 var ajax = require('ajax');
 var Vector2 = require('vector2');
-//var Settings = require('settings');
-var teamNumber = ('2102');
-
-
+var Accel = require('ui/accel');
+var Settings = require('settings');
+var teamNumber =null;
 //Setting Team Number
-//Settings.config({
-//  Settings.option(teamNumber, "2102");
-//});
+Settings.config(
+  { url:"http://wferr.com/ThePebbleAlliance/"}
+);
+Settings.option({
+  teamNumber: '2102',
+});
 // Static Cards
 var splashWindow = new UI.Window({ fullscreen: true});
 var splashLogo = new UI.Image ({
@@ -18,10 +20,11 @@ var splashLogo = new UI.Image ({
   image: "images/splash.png"
 });
 
-
 // Display Splash Card
 splashWindow.add(splashLogo);
 splashWindow.show();
+
+Accel.init();
 
 var apiId ="?X-TBA-App-Id=team2102:pebble-app:v01";
 var API ='http://www.thebluealliance.com/api/v2/team/frc'+ teamNumber + apiId;
