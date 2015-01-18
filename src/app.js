@@ -68,6 +68,7 @@ ajax(
     }]
   }]
 });
+    splashWindow.hide();
     teamInfoMenu.show();
     },
   function(error) {
@@ -79,13 +80,12 @@ ajax(
 // Display Splash Card
 splashWindow.show();
 updateTeamInfo();
-splashWindow.hide();
 
-Accel.init();
 var updateData = function(){
   updateTeamInfo();
   Vibe.vibrate('double');
   updatedWindow.show();
   
 };
+Accel.init();
 Accel.on('tap', updateData);
