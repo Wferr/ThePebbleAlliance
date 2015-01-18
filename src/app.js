@@ -68,8 +68,8 @@ ajax(
     }]
   }]
 });
-    splashWindow.hide();
     teamInfoMenu.show();
+    splashWindow.hide();
     },
   function(error) {
     console.log("Error Fetching Team Info Page");
