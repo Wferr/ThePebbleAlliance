@@ -6,7 +6,7 @@ var Accel = require('ui/accel');
 var Settings = require('settings');
 var Vibe = require('ui/vibe');
 
-var teamNumber =null;
+var teamNumber = '2102';
 //Setting Team Number
 Settings.config(
   { url:"http://wferr.com/ThePebbleAlliance/"}
@@ -59,7 +59,7 @@ ajax(
 });
     teamInfoMenu.show();
     splashWindow.hide();
-    Vibe.vibration('long');
+    Vibe.vibrate('double');
     },
   function(error) {
     console.log("Error");
