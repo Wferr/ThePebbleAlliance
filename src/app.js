@@ -69,9 +69,6 @@ ajax(
   }]
 });
     teamInfoMenu.show();
-    splashWindow.hide();
-    Vibe.vibrate('double');
-    updatedWindow.show();
     },
   function(error) {
     console.log("Error Fetching Team Info Page");
@@ -79,17 +76,16 @@ ajax(
 };
 
 
-
-
 // Display Splash Card
 splashWindow.show();
 updateTeamInfo();
+splashWindow.hide();
 
 Accel.init();
 var updateData = function(){
   updateTeamInfo();
-  setTimeout(updatedWindow.show(), 500);
-  updatedWindow.hide();
+  Vibe.vibrate('double');
+  updatedWindow.show();
   
 };
 Accel.on('tap', updateData);
