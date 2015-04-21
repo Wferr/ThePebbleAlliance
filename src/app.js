@@ -5,6 +5,7 @@ var Vector2 = require('vector2');
 var Accel = require('ui/accel');
 var Settings = require('settings');
 var Vibe = require('ui/vibe');
+var Logger = require('logger.js');
 
 //Run Splash FIRST THING
 //Create Splash Window
@@ -17,7 +18,7 @@ var splashLogo = new UI.Image ({
 splashWindow.add(splashLogo);
 splashWindow.show();
 
-
+Logger("Test Error");
 var apiId ="?X-TBA-App-Id=team2102:pebble-app:v01";
 var API ='http://www.thebluealliance.com/api/v2/';
 var teamNumber = 'frc2102';
