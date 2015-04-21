@@ -6,6 +6,7 @@ var Accel = require('ui/accel');
 var Settings = require('settings');
 var Vibe = require('ui/vibe');
 var Logger = require('logger.js');
+Logger("Test Error");
 
 //Run Splash FIRST THING
 //Create Splash Window
@@ -17,8 +18,8 @@ var splashLogo = new UI.Image ({
 });
 splashWindow.add(splashLogo);
 splashWindow.show();
+console.log("after splash");
 
-Logger("Test Error");
 var apiId ="?X-TBA-App-Id=team2102:pebble-app:v01";
 var API ='http://www.thebluealliance.com/api/v2/';
 var teamNumber = 'frc2102';
@@ -39,17 +40,6 @@ var updatedWindow = new UI.Card({
   title: 'Data Updated',
   subtitle: 'You are upto Date'
 });
-
-//End Static Cards
-//Get Years Team has played in
-var updateYearsParticipated = function(){
-ajax(
-  {
-    url: API + 'team/' + teamNumber + '/years_participated' + apiId 
-  }
-);
-  
-};
 
 //Update Team Info Function
 var updateTeamInfo = function(){
