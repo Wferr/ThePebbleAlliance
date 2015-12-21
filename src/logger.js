@@ -1,5 +1,7 @@
-function Logger(i){
+var logger = module.exports;
+
+logger.log = function log(i){
  console.log(i);
-}
-Logger("Logger Enabled");
-console.log("Logger Console.log");
+};
+
+logger.log("Logger Enabled");

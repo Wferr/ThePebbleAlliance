@@ -1,29 +1,23 @@
 // Requires
 var UI = require('ui');
 var ajax = require('ajax');
-var Vector2 = require('vector2');
 var Accel = require('ui/accel');
 var Settings = require('settings');
 var Vibe = require('ui/vibe');
-var Logger = require('logger.js');
-Logger("Test Error");
-
-//Run Splash FIRST THING
-//Create Splash Window
-var splashWindow = new UI.Window();
-var splashLogo = new UI.Image ({
-  posisiton: new Vector2 (0,0),
-  size: new Vector2 (144,168),
-  image: "images/logosplash.png"
-});
-splashWindow.add(splashLogo);
-splashWindow.show();
-console.log("after splash");
-
+var Wakeup = require('wakeup');
+var Timeline = require('timeline');
+// Custom
 var apiId ="?X-TBA-App-Id=team2102:pebble-app:v01";
 var API ='http://www.thebluealliance.com/api/v2/';
 var teamNumber = 'frc2102';
+var logger = require('logger.js');
 
+logger.log("Hello");
+
+var splashScreen = new UI.Card({
+  title: 'Loading Data'
+});
+splashScreen.show();
 
 //Setting Team Number
 Settings.config(
@@ -52,13 +46,10 @@ ajax(
     console.log("Grabbed Team Info Page");
     var teamInfoMenu= new UI.Menu({
   sections: [{
-    title: 'Team Info',
+    title: data.nickname + ' ' + data.team_number,
     items: [{
-      title: 'Team Name',
-      subtitle: data.nickname 
-    }, {
-      title: 'Team Number',
-      subtitle: data.team_number
+      title: data.nickname,
+      subtitle: data.team_number 
     }, {
       title: 'Rookie Year',
       subtitle: data.rookie_year
@@ -69,7 +60,7 @@ ajax(
   }]
 });
     teamInfoMenu.show();
-    splashWindow.hide();
+    splashScreen.hide();
     },
   function(error) {
     console.log("Error Fetching Team Info Page");

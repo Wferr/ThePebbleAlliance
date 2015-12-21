@@ -1,7 +1,6 @@
 {
     "appKeys": {},
     "capabilities": [
-        "location",
         "configurable"
     ],
     "companyName": "info@wferr.com",
@@ -12,17 +11,17 @@
             {
                 "file": "images/menu_icon.png",
                 "name": "IMAGE_MENU_ICON",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/logo_splash.png",
                 "name": "IMAGE_LOGO_SPLASH",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/tile_splash.png",
                 "name": "IMAGE_TILE_SPLASH",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "fonts/UbuntuMono-Regular.ttf",
@@ -33,20 +32,26 @@
                 "file": "images/menuicon.png",
                 "menuIcon": true,
                 "name": "IMAGES_MENUICON_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/logosplash.png",
                 "name": "IMAGES_LOGOSPLASH_PNG",
-                "type": "png"
+                "type": "bitmap"
             }
         ]
     },
+    "sdkVersion": "3",
     "shortName": "Blue Alliance",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
     "uuid": "2b48e456-d229-4fad-8941-5ca48e06f8d4",
     "versionCode": 1,
     "versionLabel": "1.0",
     "watchapp": {
+        "hiddenApp": false,
         "watchface": false
     }
 }
